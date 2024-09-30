@@ -15,13 +15,12 @@ Here we provide some generated outputs of the model. Notice that the model's per
 ### Multilingual T5
 The **mT5** model is trained on Persian grammatical error correction as a sequence-to-sequence (Seq2Seq) task. This model is the multilingual version of famous **T5 (Text-to-Text Transfer Transformer)** model which is capable of handling 101 languages. The architecture of T5 model can be seen in the following image.
 
-![T5-architecture](https://github.com/user-attachments/assets/efb9c5b4-06b3-4e76-a777-8cfb1db1ecf6)
-
+<img src="https://github.com/user-attachments/assets/efb9c5b4-06b3-4e76-a777-8cfb1db1ecf6" height="400"/>
 
 ### ParsBERT (BERT-2-BERT)
 ParsBERT is another transformer-based model that is specifically trained on Persian language. Since **ParsBERT** is an encoder-only model, we adapted it for the text-to-text task by employing two separate BERT models for the encoder and decoder, creating a **BERT-2-BERT** architecture. The architecture allows ParsBERT to handle grammar and spelling corrections similarly to the Seq2Seq model. The architecture of used model can be found in the following image.
 
-![bert2bert](https://github.com/user-attachments/assets/1986ab65-e9fd-4325-b3dd-e6d067a4bc9f)
+<img src="https://github.com/user-attachments/assets/1986ab65-e9fd-4325-b3dd-e6d067a4bc9f" height="400"/>
 
 ## Dataset
 
@@ -85,7 +84,3 @@ The following image shows calculated scores for the model in the first 18000 ste
 | Huggingface Model Class       | EncoderDecoderModel                  |
 | Tokenizer                     | WordPiece                            |
 | Tuning Method                 | Traditional Fine-Tuning              |
-
-
-
-
