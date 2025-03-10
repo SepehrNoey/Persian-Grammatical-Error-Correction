@@ -1,9 +1,9 @@
 # Persian Grammatical Error Correction using Transformer-Based Models
 
-This project focuses on correcting grammatical and spelling errors in Persian sentences using two transformer-based models: **mT5** and **ParsBERT**. These are text-to-text models designed to handle Persian error correction tasks by transforming an erroneous sentence into a corrected one.
+This project focuses on correcting grammatical and spelling errors in Persian sentences using a transformer-based model: **mT5** that is designed for supporting multiple languages including Persian.
 
 ## Demo
-Here we provide some generated outputs of the model. Notice that the model's performance is great and still needs several improvements, like the second example in the following table. As mentioned previously, the inputs and outputs of the model were in Persian language.
+Here we provide some generated outputs of the model. The model has been able to correct some of the errors but still needs more accuracy and improvement. As mentioned previously, the inputs and outputs of the model were in Persian language.
 
 |Erroneous Input|Desired Output (Target)|Generated Output (Corrected)|
 |--------|--------|--------|
@@ -13,14 +13,9 @@ Here we provide some generated outputs of the model. Notice that the model's per
 ## Models
 
 ### Multilingual T5
-The **mT5** model is trained on Persian grammatical error correction as a sequence-to-sequence (Seq2Seq) task. This model is the multilingual version of famous **T5 (Text-to-Text Transfer Transformer)** model which is capable of handling 101 languages. The architecture of T5 model can be seen in the following image.
+The **mT5** model is fine-tuned for Persian grammatical error correction as a sequence-to-sequence (Seq2Seq) task. This model is the multilingual version of famous **T5 (Text-to-Text Transfer Transformer)** model which is capable of handling 101 languages. The architecture of T5 model can be seen in the following image.
 
 <img src="https://github.com/user-attachments/assets/efb9c5b4-06b3-4e76-a777-8cfb1db1ecf6" height="400"/>
-
-### ParsBERT (BERT-2-BERT)
-ParsBERT is another transformer-based model that is specifically trained on Persian language. Since **ParsBERT** is an encoder-only model, we adapted it for the text-to-text task by employing two separate BERT models for the encoder and decoder, creating a **BERT-2-BERT** architecture. The architecture allows ParsBERT to handle grammar and spelling corrections similarly to the Seq2Seq model. The architecture of used model can be found in the following image.
-
-<img src="https://github.com/user-attachments/assets/1986ab65-e9fd-4325-b3dd-e6d067a4bc9f" height="400"/>
 
 ## Dataset
 
@@ -70,17 +65,3 @@ The following image shows calculated scores for the model in the first 18000 ste
 | LoRA Target Modules            | "q" and "v"                          |
 | LoRA Dropout Probability       | 0.01                                 |
 | Device Specs                   | Kaggle Virtual Machine – 12 GB RAM, GPU Tesla P100 16 GB RAM |
-
----
-
-### ParsBERT Training Configuration
-
-| **Parameter**                | **Value**                            |
-|------------------------------|--------------------------------------|
-| Programming Language          | Python                               |
-| Frameworks                    | PyTorch, Huggingface Libraries, Pandas, Numpy |
-| Model                         | ParsBERT                             |
-| Checkpoint                    | [HooshvareLab/bert-fa-zwnj-base](https://huggingface.co/HooshvareLab/bert-fa-zwnj-base)        |
-| Huggingface Model Class       | EncoderDecoderModel                  |
-| Tokenizer                     | WordPiece                            |
-| Tuning Method                 | Traditional Fine-Tuning              |
